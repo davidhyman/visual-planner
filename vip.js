@@ -1,3 +1,6 @@
+SHOW_MONTHS = 16;
+LOOK_BACK = 1;
+
 var CELLWIDTH = 120;
 var CELLHEIGHT = 16;
 var EVENTSIZE = 10;
@@ -99,7 +102,7 @@ function create_multi_col_view()
 	// reset dimensions depending on available space
 	CELLHEIGHT = Math.floor(window.innerHeight/(31+6+1));  // max days + max offset + month name
 	if (CELLHEIGHT < 8) CELLHEIGHT = 8;
-	CELLWIDTH = Math.floor(window.innerWidth/12);
+	CELLWIDTH = Math.floor(window.innerWidth/SHOW_MONTHS);
 	if (CELLWIDTH < 60) CELLWIDTH = 60;
 	EVENTSIZE = (CELLHEIGHT-6);
 	if (EVENTSIZE < 4) EVENTSIZE = 4;
@@ -107,23 +110,23 @@ function create_multi_col_view()
 
 	var dt_month = new Date(TODAY);
 	dt_month.setDate(1);  // 1st of this month
-	dt_month.setMonth(dt_month.getMonth()-2);  // offset
+	dt_month.setMonth(dt_month.getMonth()-LOOK_BACK);  // offset
 
 	var dt_end = new Date(dt_month);
-	dt_end.setMonth(dt_end.getMonth()+12);
+	dt_end.setMonth(dt_end.getMonth()+SHOW_MONTHS);
 
 	var xpos=0;
 	var col_id=0;
 	while (dt_month.getTime() < dt_end.getTime())
 	{
-    var mth = create_div(xpos, 0);
-    mth.vipMonthHeader = {year:dt_month.getFullYear(), month:dt_month.getMonth()+1};
-    mth.setAttribute('onclick', "onclick_month_header(event);");
-    mth.style.width = CELLWIDTH;
-    mth.style.fontSize = FONTSIZE;
-    mth.style.textAlign = "center";
-    mth.style.color = CLR_TEXT;
-    mth.style.cursor = "pointer";
+        var mth = create_div(xpos, 0);
+        mth.vipMonthHeader = {year:dt_month.getFullYear(), month:dt_month.getMonth()+1};
+        mth.setAttribute('onclick', "onclick_month_header(event);");
+        mth.style.width = CELLWIDTH;
+        mth.style.fontSize = FONTSIZE;
+        mth.style.textAlign = "center";
+        mth.style.color = CLR_TEXT;
+        mth.style.cursor = "pointer";
 
 		var dt_array = dt_month.toDateString().split(' ');
 		var str = fmt("^  ^", dt_array[1], dt_array[3]);
