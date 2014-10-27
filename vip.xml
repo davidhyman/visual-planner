@@ -16,14 +16,14 @@
 <button type="button" title="Settings" onclick="gadgets.views.requestNavigateTo('canvas', {content : 'settings'});"><b>*</b></button>
 </center>
 <div id="vip"></div>
-<script type="text/html" src="https://raw.githubusercontent.com/davidhyman/visual-planner/master/vip.js"></script>
+<script src="https://raw.githubusercontent.com/davidhyman/visual-planner/master/vip.js"></script>
 <script type="text/javascript">gadgets.util.registerOnLoadHandler(init_view("panel"));</script>
 ]]>
 </Content>
 <Content type="html" view="canvas">
 <![CDATA[
 <div id="vip"></div>
-<script type="text/html" src="https://raw.githubusercontent.com/davidhyman/visual-planner/master/vip.js"></script>
+<script src="https://raw.githubusercontent.com/davidhyman/visual-planner/master/vip.js"></script>
 <script type="text/javascript">gadgets.util.registerOnLoadHandler(init_view("canvas"));</script>
 ]]>
 </Content>

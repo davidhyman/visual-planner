@@ -1,4 +1,3 @@
-<script>
 SHOW_MONTHS = 16;
 LOOK_BACK = 1;
 
@@ -634,4 +633,3 @@ function fmt(fmtspec)
 
 	return str;
 }
-</script>
