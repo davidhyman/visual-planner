@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-<ModulePrefs title="ViP - DKH" description="Visual Planner for Google Calendar" author="DKH (previously Chris Thompson)">
-<Require feature="google.calendar-0.5.read"/>
-<Require feature="views"/>
-<Require feature="settitle"/>
-<Require feature="setprefs"/>
-<Require feature="dynamic-height"/>
+<ModulePrefs title="ViP2" description="Visual Planner for Google Calendar" author="David Hyman">
+    <Require feature="google.calendar-0.5.read"/>
+    <Require feature="views"/>
+    <Require feature="settitle"/>
+    <Require feature="setprefs"/>
+    <Require feature="dynamic-height"/>
 </ModulePrefs>
 <UserPref name="show_single_col" datatype="bool" default_value="false"/>
 <Content type="html">
@@ -16,14 +16,14 @@
 <button type="button" title="Settings" onclick="gadgets.views.requestNavigateTo('canvas', {content : 'settings'});"><b>*</b></button>
 </center>
 <div id="vip"></div>
-<script type="text/javascript" src="C:\Users\david_000\Downloads\vip.js"></script>
+<script type="text/javascript" src="https://github.com/davidhyman/visual-planner/blob/master/vip.js"></script>
 <script type="text/javascript">gadgets.util.registerOnLoadHandler(init_view("panel"));</script>
 ]]>
 </Content>
 <Content type="html" view="canvas">
 <![CDATA[
 <div id="vip"></div>
-<script type="text/javascript" src="C:\Users\david_000\Downloads\vip.js"></script>
+<script type="text/javascript" src="https://github.com/davidhyman/visual-planner/blob/master/vip.js"></script>
 <script type="text/javascript">gadgets.util.registerOnLoadHandler(init_view("canvas"));</script>
 ]]>
 </Content>
